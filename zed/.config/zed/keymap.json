@@ -1,0 +1,62 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "!Terminal",
+    "bindings": {
+      "ctrl-shift-c": null
+    }
+  },
+  {
+    "context": "KeymapEditor",
+    "bindings": {
+      "ctrl-shift-c": null
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-c": null
+    }
+  },
+  {
+    "bindings": {}
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "k j": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "J": ["workspace::SendKeystrokes", "5 j z z"],
+      "K": ["workspace::SendKeystrokes", "5 k z z"],
+      "space p": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "J": ["workspace::SendKeystrokes", "5 j z z"],
+      "K": ["workspace::SendKeystrokes", "5 k z z"]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-c": "workspace::CopyPath",
+      "alt-b": "workspace::ToggleRightDock",
+      "alt-v": "workspace::ToggleVimMode",
+      "alt-g": "git_panel::ToggleFocus",
+      "alt-e": "project_panel::ToggleFocus",
+      "ctrl-alt-b": "workspace::ToggleLeftDock"
+    }
+  }
+]

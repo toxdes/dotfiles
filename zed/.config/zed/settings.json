@@ -1,0 +1,104 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "on_yank",
+    "use_smartcase_find": false
+  },
+  "ui_font_weight": 400.0,
+  "project_panel": {
+    "button": true,
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "buffer_font_family": "IosBerkMono",
+  "buffer_font_weight": 400.0,
+  "buffer_font_size": 14,
+  "buffer_line_height": "comfortable",
+  "ui_font_family": "IosBerkMono",
+  "title_bar": {
+    "show_sign_in": false,
+    "show_onboarding_banner": false,
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_branch_icon": true,
+    "show_branch_name": true,
+    "show_project_items": true
+  },
+  "toolbar": {
+    "agent_review": false,
+    "breadcrumbs": false,
+    "code_actions": false,
+    "quick_actions": false
+  },
+  "ui_font_size": 13.0,
+  "terminal": {
+    "font_size": 12.0,
+    "font_family": "IosBerkMono",
+    "font_weight": 400,
+    "line_height": {
+      "custom": 1.5
+    },
+    "cursor_shape": "underline",
+    "blinking": "off"
+  },
+  "base_keymap": "VSCode",
+  "preview_tabs": {
+    "enabled": false
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "selection_highlight": false,
+  "cursor_shape": "underline",
+  "cursor_blink": false,
+  "show_whitespaces": "selection",
+  "soft_wrap": "editor_width",
+  "hard_tabs": false,
+  "tab_size": 2,
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte - No Italics",
+    "dark": "Catppuccin Latte"
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "agent": {
+    "enabled": false
+  },
+  "telemetry": null,
+  "git": {
+    "hunk_style": "staged_hollow",
+    "inline_blame": {
+      "enabled": false
+    },
+    "blame": {
+      "show_avatar": false
+    },
+    "git_gutter": "tracked_files"
+  }
+}

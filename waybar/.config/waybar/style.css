@@ -3,6 +3,7 @@
 
 
 /* Tokyo Night */
+/*
 @define-color background #291D4F;
 @define-color background-light #24283b;
 @define-color foreground #c0caf5;
@@ -15,6 +16,7 @@
 @define-color cyan #7dcfff;
 @define-color white #a9b1d6;
 @define-color orange #ff9e64;
+*/
 
 
 /* Everforest Dark Colors
@@ -48,9 +50,23 @@
 */
 
 
+/* Palenight Color Palette */
+@define-color background #292D3E;
+@define-color background-light #3c3836;
+@define-color foreground #eeffff;
+@define-color black #676E95;
+@define-color red #f07178;
+@define-color green #c3e88d;
+@define-color yellow #ffcb6b;
+@define-color blue #82aaff;
+@define-color magenta #c792ef;
+@define-color cyan #89ddff;
+@define-color white #eeffff;
+@define-color orange #f78c6c;
 
 /* Gruvbox Dark Colors */
-/* @define-color background #282828;
+/*
+ @define-color background #282828;
  @define-color background-light #3c3836;
  @define-color foreground #ebdbb2;
  @define-color black #32302f;
@@ -78,35 +94,35 @@
 @define-color mpd-color @magenta;
 @define-color weather-color @magenta;
 @define-color playerctl-color @orange;
-@define-color clock-color @blue;
-@define-color cpu-color @magenta;
+@define-color clock-color @red;
+@define-color cpu-color @blue;
 @define-color network-color @green;
-@define-color memory-color @magenta;
+@define-color memory-color @orange;
 @define-color temperature-color @magenta;
 @define-color temperature-critical-color @red;
-@define-color battery-color @cyan;
+@define-color battery-color @green;
 @define-color battery-charging-color @green;
 @define-color battery-warning-color @yellow;
 @define-color battery-critical-color @red;
 @define-color network-color @magenta;
 @define-color network-disconnected-color @magenta;
-@define-color pulseaudio-color @blue;
+@define-color pulseaudio-color @cyan;
 @define-color pulseaudio-muted-color @red;
-@define-color backlight-color @blue;
+@define-color backlight-color @magenta;
 @define-color disk-color @cyan;
 @define-color uptime-color @cyan;
 @define-color updates-color @orange;
 @define-color quote-color @green;
 @define-color idle-inhibitor-color @foreground;
 @define-color idle-inhibitor-active-color @red;
-@define-color tray-color @yellow;
+@define-color tray-color @background;
 
 * {
     /* Base styling for all modules */
     border: none;
     border-radius: 0;
-    font-family: "Iosevka Nerd Font Extended SemiBold";
-    font-size: 13px;
+    font-family: "IosBerkMono SemiBold";
+    font-size: 11px;
     min-height: 0;
 }
 
@@ -115,16 +131,13 @@ window#waybar {
     color: @foreground;
 }
 
-
-
 /* Common module styling with border-bottom */
 #mode, #mpd, #custom-weather, #custom-network, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #pulseaudio,
 #backlight, #disk, #custom-uptime, #custom-updates, #custom-quote,
 #idle_inhibitor, #tray {
-    padding: 0 10px;
-    margin: 0 2px;
-    border-bottom: 2px solid transparent;
+  margin: 0px 0px;
+    padding: 0px 10px;
     background-color: transparent;
 }
 
@@ -133,7 +146,6 @@ window#waybar {
     padding: 0 10px;
     background-color: transparent;
     color: @workspaces-color;
-		border-bottom: 2px solid transparent;
     margin: 0;
 }
 
@@ -143,162 +155,166 @@ window#waybar {
 }
 
 #workspaces button.active {
-		border-bottom: 2px solid @cyan;
-    color: @cyan;
+		background-color: @red;
+    color: @white;
+    border: 2px solid @yellow;
+}
+
+#workspaces button.focused {
+		background-color: @blue;
+    color: @background;
 }
 
 #workspaces button.urgent {
     background-color: @workspaces-urgent-bg;
-    color: @workspaces-urgent-fg;
+    color: white;
 }
 
 /* Module-specific styling */
 #mode {
-    color: @mode-color;
-    border-bottom-color: @mode-color;
+    background-color: @mode-color;
+    color: @background;
 }
 
 #mpd {
-    color: @mpd-color;
-    border-bottom-color: @mpd-color;
+    background-color: @mpd-color;
+    color: @background;
 }
 
 #mpd.disconnected,
 #mpd.stopped {
-    color: @foreground;
-    border-bottom-color: transparent;
+    color: @background;
 }
 
 #custom-weather {
-    color: @weather-color;
-    border-bottom-color: @weather-color;
+    background-color: @weather-color;
+    color: @background;
 }
 
 #custom-playerctl {
-    color: @playerctl-color;
-    border-bottom-color: @playerctl-color;
+    background-color: @playerctl-color;
+    color: @background;
 }
 
 #custom-network {
-    color: @network-color;
-    border-bottom-color: @network-color;
+    background-color: @network-color;
+    color: @background;
 }
 
 #custom-playerctl.Playing {
-    color: @cyan;
-    border-bottom-color: @cyan;
+    background-color: @cyan;
+    color: @background;
 }
 
 #custom-playerctl.Paused {
-    color: @orange;
-    border-bottom-color: @orange;
+    background-color: @orange;
+    color: @background;
 }
 
 #clock {
-    color: @clock-color;
-    border-bottom-color: @clock-color;
+    background-color: @clock-color;
+    color: @background;
 }
 
 #cpu {
-    color: @cpu-color;
-    border-bottom-color: @cpu-color;
+    background-color: @cpu-color;
+    color: @background;
 }
 
 #memory {
-    color: @memory-color;
-    border-bottom-color: @memory-color;
+    background-color: @memory-color;
+    color: @background;
 }
 
 #temperature {
-    color: @temperature-color;
-    border-bottom-color: @temperature-color;
+    background-color: @temperature-color;
+    color: @background;
 }
 
 #temperature.critical {
-    color: @temperature-critical-color;
-    border-bottom-color: @temperature-critical-color;
+    background-color: @temperature-critical-color;
+    color: @background;
 }
 
 #battery {
-    color: @battery-color;
-    border-bottom-color: @battery-color;
+    background-color: @battery-color;
+    color: @background;
 }
 
 #battery.charging, #battery.plugged {
-    color: @battery-charging-color;
-    border-bottom-color: @battery-charging-color;
+    background-color: @battery-charging-color;
+    color: @background;
 }
 
 #battery.warning:not(.charging) {
-    color: @battery-warning-color;
-    border-bottom-color: @battery-warning-color;
+    background-color: @battery-warning-color;
+    color: @background;
 }
 
 #battery.critical:not(.charging) {
-    color: @battery-critical-color;
-    border-bottom-color: @battery-critical-color;
+    background-color: @battery-critical-color;
+    color: @background;
 }
 
 #network {
-    color: @network-color;
-    border-bottom-color: @network-color;
+    background-color: @network-color;
+    color: @background;
 }
 
 #network.disconnected {
-    color: @network-disconnected-color;
-    border-bottom-color: @network-disconnected-color;
+    background-color: @network-disconnected-color;
+    color: @background;
 }
 
 #pulseaudio {
-    color: @pulseaudio-color;
-    border-bottom-color: @pulseaudio-color;
+    background-color: @pulseaudio-color;
+    color: @background;
 }
 
 #pulseaudio.muted {
-    color: @pulseaudio-muted-color;
-    border-bottom-color: @pulseaudio-muted-color;
+    background-color: @pulseaudio-muted-color;
+    color: @background;
 }
 
 #backlight {
-    color: @backlight-color;
-    border-bottom-color: @backlight-color;
+    background-color: @backlight-color;
+    color: @background;
 }
 
 #disk {
-    color: @disk-color;
-    border-bottom-color: @disk-color;
+    background-color: @disk-color;
+    color: @background;
 }
 
 #custom-uptime {
-    color: @uptime-color;
-    border-bottom-color: @uptime-color;
+    background-color: @uptime-color;
+    color: @background;
 }
 
 #custom-updates {
-    color: @updates-color;
-    border-bottom-color: @updates-color;
+    background-color: @updates-color;
+    color: @background;
 }
 
 #custom-quote {
-    color: @quote-color;
-    border-bottom-color: @quote-color;
+    background-color: @quote-color;
+    color: @background;
 }
 
 #idle_inhibitor {
-    color: @idle-inhibitor-color;
-    border-bottom-color: transparent;
+    color: @background;
 }
 
 #idle_inhibitor.activated {
-    color: @idle-inhibitor-active-color;
-    border-bottom-color: @idle-inhibitor-active-color;
+    background-color: @idle-inhibitor-active-color;
+    color: @background;
 }
 
 #tray {
-    background-color: transparent;
-    border-bottom-color: @tray-color;
-    padding: 0 10px;
-    margin: 0 2px;
+    background-color: @tray-color;
+    color: @background;
+    padding: 0px 10px;
+    margin: 0px 0px;
 }
 
 #tray > .passive {
@@ -307,6 +323,6 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    color: @red;
-    border-bottom-color: @red;
+    background-color: @red;
+    color: @background;
 }

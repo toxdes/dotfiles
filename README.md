@@ -1,5 +1,12 @@
 # Things to do after fresh install (Self Reminder)
 
+## 0. Install dotfiles - Requires [GNU stow](https://www.gnu.org/software/stow/)
+```sh
+$ sudo apt install stow # install GNU stow
+$ stow -t ~ foot tmux sway waybar nvim zed # link configs
+```
+
+
 ## 1. Setting up `git`
 
 Generate a ssh key pair.

@@ -1,0 +1,132 @@
+{
+  "layer": "top",
+    "position": "top",
+    "height": 20,
+    "margin-top": 0,
+    "margin-left":  0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "modules-center": ["sway/window"],
+    "modules-left": [
+      "sway/workspaces",
+    ],
+    "modules-right": [
+      "cpu",
+    "memory",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "tray",
+    "clock",
+    ],
+    "sway/window": {
+      "format": "{title}",
+      "icon":true,
+      "icon-size": 14,
+    },
+    "sway/workspaces": {
+      "disable-scroll":true,
+      "format": "󰣇 [{name}]",
+    },
+    "clock": {
+      "format": "󰥔 {:%a, %d %b [%I:%M%p]}"
+    },
+    "cpu": {
+      "format": "󰘚 CPU {usage}%",
+      "tooltip": true,
+      "interval": 5,
+      "on-click": "alacritty -e btop"
+    },
+    "memory": {
+      "format": "󰍛 {used}G",
+      "tooltip": true,
+      "tooltip-format": "󰍛 USING: {used}GB\n  FREE: {avail}GB",
+      "interval": 5,
+      "on-click": "alacritty -e btop"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} TEMP {temperatureC}°C",
+      "format-icons": [
+        "󱃃",
+      "󰔏",
+      "󱃂"
+      ],
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} BAT {capacity}%",
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": "󰚥 {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": [
+        "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+      ]
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "󰂰 {volume}%",
+      "format-bluetooth-muted": "󰂲 {icon}",
+      "format-muted": "󰝟",
+      "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰥰",
+        "headset": "󰋎",
+        "phone": "󰏲",
+        "portable": "󰄝",
+        "car": "󰄋",
+        "default": [
+          "󰕿",
+        "󰖀",
+        "󰕾"
+        ]
+      },
+      "on-click": "pavucontrol",
+      "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "󰃞",
+      "󰃟",
+      "󰃠"
+      ],
+      "on-scroll-up": "brightnessctl set +10%",
+      "on-scroll-down": "brightnessctl set 10%-"
+    },
+    "disk": {
+      "interval": 30,
+      "format": "󰋊 {percentage_used}%",
+      "path": "/",
+    },
+    "tray": {
+      "icon-size": 14,
+      "spacing": 5
+    },
+    "custom/right-slant": {
+      "format": "🭀",
+      "interval": "once",
+      "tooltip": false
+    },
+    "custom/left-slant": {
+      "format": "🭦",
+      "interval": "once",
+      "tooltip": false
+    }
+}
