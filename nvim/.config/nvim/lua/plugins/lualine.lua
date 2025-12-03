@@ -6,7 +6,7 @@ return {
     config = function () 
       require('lualine').setup {
         options = {
-          theme = 'catppuccin',
+          theme = 'solarized',
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
         }

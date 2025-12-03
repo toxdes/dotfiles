@@ -16,10 +16,11 @@ vim.keymap.set('n', '<leader>t', ":NvimTreeToggle<CR>", {noremap = true, silent 
 -- config
 vim.keymap.set('n', '<leader>cr', ":w<CR>:source % <CR>", {noremap = true, silent = true })
 vim.keymap.set('n', '<leader>cc', ":e ~/.config/nvim/init.lua <CR>", {noremap = true, silent = true })
+vim.keymap.set('n', 'J', '5jzz', { desc = "go 5 lines down" })
+vim.keymap.set('n', 'K', '5jkk', { desc = "go 5 lines up" })
+vim.keymap.set('v', 'J', '5jzz', { desc = "go 5 lines down" })
+vim.keymap.set('v', 'K', '5jkk', { desc = "go 5 lines up" })
 
--- move line up/down
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = "move line down"})
-vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv", { desc = "move line up"})
 
 
 -- scroll with centered-cursor
