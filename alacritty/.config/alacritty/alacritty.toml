@@ -10,8 +10,8 @@ padding.y = 4
 decorations = "Full"
 
 [font]
-normal.family = "Iosevka Nerd Font SemiBold"
-bold.family = "Iosevka Nerd Font SemiBold"
+normal.family = "IosBerkMono Medium"
+bold.family = "IosBerkMono SemiBold"
 size = 12.0
 
 # [terminal.shell]

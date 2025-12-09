@@ -9,6 +9,7 @@ export LANG='en_IN.UTF-8'
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
+export PATH="$PATH:/opt/homebrew/bin"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
