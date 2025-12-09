@@ -7,6 +7,9 @@ return {
     opts = {
       palette = 'solarized',
       variant = 'spring',
+      transparent = {
+        enabled = true,
+      },
     },
     config = function(_, opts)
       vim.o.termguicolors = true
