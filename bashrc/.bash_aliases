@@ -26,7 +26,7 @@ alias pc="python3 -i $PYTHON_SCRIPTS/imports.py"
 alias days="$PYTHON_SCRIPTS/days.py"
 
 # envs
-alias ego="source /opt/env/go.sh"
-alias eflut="source /opt/env/flutter.sh"
+alias ego="source $HOME/env/go.sh"
+alias eflut="source $HOME/env/flutter.sh"
 
 
