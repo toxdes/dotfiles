@@ -17,9 +17,9 @@ vim.keymap.set('n', '<leader>t', ":NvimTreeToggle<CR>", {noremap = true, silent 
 vim.keymap.set('n', '<leader>cr', ":w<CR>:source % <CR>", {noremap = true, silent = true })
 vim.keymap.set('n', '<leader>cc', ":e ~/.config/nvim/init.lua <CR>", {noremap = true, silent = true })
 vim.keymap.set('n', 'J', '5jzz', { desc = "go 5 lines down" })
-vim.keymap.set('n', 'K', '5jkk', { desc = "go 5 lines up" })
+vim.keymap.set('n', 'K', '5kzz', { desc = "go 5 lines up" })
 vim.keymap.set('v', 'J', '5jzz', { desc = "go 5 lines down" })
-vim.keymap.set('v', 'K', '5jkk', { desc = "go 5 lines up" })
+vim.keymap.set('v', 'K', '5kzz', { desc = "go 5 lines up" })
 
 
 

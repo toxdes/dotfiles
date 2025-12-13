@@ -56,7 +56,11 @@
       "alt-v": "workspace::ToggleVimMode",
       "alt-g": "git_panel::ToggleFocus",
       "alt-e": "project_panel::ToggleFocus",
-      "ctrl-alt-b": "workspace::ToggleLeftDock"
+      "ctrl-alt-b": "workspace::ToggleLeftDock",
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-j": "menu::SelectNext",
+      "alt-k": "menu::SelectPrevious"
     }
   }
 ]

@@ -196,6 +196,8 @@ exec lxpolkit
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
+    bindsym $mod+u exec $scripts/wlsunset.py
+    bindsym $mod+Shift+u exec $scripts/wlsunset.py kill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
