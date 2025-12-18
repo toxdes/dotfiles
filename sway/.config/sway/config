@@ -302,8 +302,8 @@ client.placeholder      $border     $bg         $fg-inactive $border     $border
 client.background       $bg
 
 # Additional styling
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 # hide_edge_borders both
 
 # Set a random wallpaper on startup
