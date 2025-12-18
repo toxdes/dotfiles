@@ -1,4 +1,4 @@
-# git aliases
+# git
 alias gl="git log --oneline"
 alias gst="git status"
 alias ga="git add"
@@ -6,7 +6,7 @@ alias gc="git commit --verbose"
 alias gca="git commit --amend --verbose"
 alias gm="git merge"
 alias gck="git checkout"
-alias gf="git fetch --prune origin"
+alias gf="git fetch origin"
 alias gp="git push origin"
 alias gr="git rebase -i"
 alias gb="git branch"
@@ -20,7 +20,9 @@ alias offf="shutdown now"
 alias serve="python3 -m http.server"
 alias i="ping 8.8.8.8"
 alias py="python3"
+alias ls="eza"
 
+# scripts
 export PYTHON_SCRIPTS="$HOME/pro/python-scripts"
 alias pc="python3 -i $PYTHON_SCRIPTS/imports.py"
 alias days="$PYTHON_SCRIPTS/days.py"
@@ -29,4 +31,7 @@ alias days="$PYTHON_SCRIPTS/days.py"
 alias ego="source $HOME/env/go.sh"
 alias eflut="source $HOME/env/flutter.sh"
 
+# apt
+alias aptu="sudo apt update"
+alias aptuu="sudo apt update && sudo apt upgrade -y"
 

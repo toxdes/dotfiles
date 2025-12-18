@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-PS1="[flutter-env] $PS1"
+PS1="[flutter-env]$PS1"
 ANDROID_HOME="$HOME/Android/Sdk"
 PATH="$PATH:/opt/android-studio/bin:$ANDROID_HOME/cmdline-tools/latest/bin"
 PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"

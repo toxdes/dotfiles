@@ -64,26 +64,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -109,12 +91,22 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 ### added by cp-setup script - start
-# export PS1='\[\e[0;34m\][DO HARD THINGS] \[\e[0;33m\]\W\[\e[0m\]\[\e[0;31m\] ❯ \[\e[0m\]'
-export PS1='\[\e[0;34m\]\[\e[0;33m\]\W\[\e[0m\]\[\e[0;31m\] ❯ \[\e[0m\]'
+git_ps1() {
+  # Prints nothing outside a git repo; otherwise prints: "󰘬 (branch*+)"
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export GIT_PS1_SHOWUNTRACKEDFILES=1   # adds '%' when untracked files exist
+  local s="$(__git_ps1 "(%s)")"
+  # [[ -n "$s" ]] && printf "\e[36m%s\e[0m" "$s"
+  [[ -n "$s" ]] && printf "\e[36m 󰘬 %s\e[0m" "$s"
+}
+#PS1='\[\e[0;34m\]\[\e[0;31m\]\W\[\e[0m\]$(git_ps1)\[\e[0;31m\]$ \[\e[0m\]'
+PS1='\[\e[0;34m\]\[\e[0;31m\]  \W\[\e[0m\]$(git_ps1)\[\e[0;31m\] ❯ \[\e[0m\]'
+
 alias cph="python3 $HOME/cp/cph.py &"
 ccp() {
   [ -f "Main.java" ] || { echo "Main.java not found"; return 1; }
