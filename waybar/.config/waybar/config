@@ -1,17 +1,19 @@
 {
   "layer": "top",
     "position": "top",
-    "height": 20,
+    "height": 18,
     "margin-top": 0,
     "margin-left":  0,
     "margin-right": 0,
     "margin-bottom": 0,
-    "modules-center": ["sway/window"],
     "modules-left": [
       "sway/workspaces",
+    "custom/space",
+    "sway/window",
     ],
     "modules-right": [
-      "cpu",
+      "custom/ip",
+    "cpu",
     "memory",
     "pulseaudio",
     "backlight",
@@ -19,14 +21,24 @@
     "tray",
     "clock",
     ],
+    "custom/space": {
+      "format": "  ",
+    },
     "sway/window": {
       "format": "{title}",
       "icon":true,
+      "max-length":30,
       "icon-size": 14,
     },
     "sway/workspaces": {
       "disable-scroll":true,
       "format": "󰣇 [{name}]",
+    },
+    "custom/ip": {
+      "exec": "ip route get 1 | awk '{print $7; exit}'",
+      "interval": 30,
+      "format": "  IP {} ",
+      "tooltip": false,
     },
     "clock": {
       "format": "󰥔 {:%a, %d %b [%I:%M%p]}"
@@ -38,7 +50,7 @@
       "on-click": "alacritty -e btop"
     },
     "memory": {
-      "format": "󰍛 {used}G",
+      "format": "󰍛 MEM {used}G",
       "tooltip": true,
       "tooltip-format": "󰍛 USING: {used}GB\n  FREE: {avail}GB",
       "interval": 5,
@@ -78,8 +90,8 @@
       ]
     },
     "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-bluetooth": "󰂰 {volume}%",
+      "format": "{icon} VOL {volume}%",
+      "format-bluetooth": "󰂰 VOL {volume}%",
       "format-bluetooth-muted": "󰂲 {icon}",
       "format-muted": "󰝟",
       "format-icons": {
@@ -101,7 +113,7 @@
       "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
     },
     "backlight": {
-      "format": "{icon} {percent}%",
+      "format": "{icon} BLT {percent}%",
       "format-icons": [
         "󰃞",
       "󰃟",

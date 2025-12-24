@@ -105,6 +105,7 @@
 @define-color battery-warning-color @yellow;
 @define-color battery-critical-color @red;
 @define-color network-color @magenta;
+@define-color ip-color @green;
 @define-color network-disconnected-color @magenta;
 @define-color pulseaudio-color @cyan;
 @define-color pulseaudio-muted-color @red;
@@ -121,7 +122,7 @@
     /* Base styling for all modules */
     border: none;
     border-radius: 0;
-    font-family: "IosBerkMono SemiBold";
+    font-family: "IosBerkMono Medium";
     font-size: 11px;
     min-height: 0;
 }
@@ -134,7 +135,7 @@ window#waybar {
 /* Common module styling with border-bottom */
 #mode, #mpd, #custom-weather, #custom-network, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #pulseaudio,
-#backlight, #disk, #custom-uptime, #custom-updates, #custom-quote,
+#backlight, #disk, #custom-uptime, #custom-updates, #custom-quote, #custom-ip
 #idle_inhibitor, #tray {
   margin: 0px 0px;
     padding: 0px 10px;
@@ -261,6 +262,7 @@ window#waybar {
     color: @background;
 }
 
+
 #network.disconnected {
     background-color: @network-disconnected-color;
     color: @background;
@@ -284,6 +286,11 @@ window#waybar {
 #disk {
     background-color: @disk-color;
     color: @background;
+}
+
+#custom-ip {
+  background-color: @ip-color;
+  color: @background;
 }
 
 #custom-uptime {
