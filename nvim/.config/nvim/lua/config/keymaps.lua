@@ -10,20 +10,18 @@ vim.keymap.set('n', '<leader>cc', builtin.colorscheme, { desc = 'Telescope color
 -- indent entire file
 vim.keymap.set('n', '<leader>=','gg=G', { noremap = true, silent = true })
 
--- NvimTree keybindings
-vim.keymap.set('n', '<leader>t', ":NvimTreeToggle<CR>", {noremap = true, silent = true })
+-- netrw keybindings
+vim.keymap.set('n', '<leader>t', ":Ex<CR>", {noremap = true, silent = true })
 
 -- config
 vim.keymap.set('n', '<leader>cr', ":w<CR>:source % <CR>", {noremap = true, silent = true })
 vim.keymap.set('n', '<leader>cc', ":e ~/.config/nvim/init.lua <CR>", {noremap = true, silent = true })
+
+-- movement with centered cursor
 vim.keymap.set('n', 'J', '5jzz', { desc = "go 5 lines down" })
 vim.keymap.set('n', 'K', '5kzz', { desc = "go 5 lines up" })
 vim.keymap.set('v', 'J', '5jzz', { desc = "go 5 lines down" })
 vim.keymap.set('v', 'K', '5kzz', { desc = "go 5 lines up" })
-
-
-
--- scroll with centered-cursor
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
