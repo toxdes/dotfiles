@@ -87,6 +87,8 @@ exec lxpolkit
 #
     # Start a terminal
     bindsym $mod+Return exec $terminal
+    # youtube-music
+    bindsym $mod+y exec youtube-music
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -308,3 +310,6 @@ default_floating_border pixel 1
 
 # Set a random wallpaper on startup
 exec swaybg -i "$(find ~/Pictures/walls -type f | shuf -n 1)" -m fill
+
+# set youtube-music always in float
+for_window [class="com.github.th_ch.youtube_music"] floating enable
