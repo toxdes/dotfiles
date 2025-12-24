@@ -10,7 +10,10 @@ alias gf="git fetch origin"
 alias gp="git push origin"
 alias gr="git rebase -i"
 alias gb="git branch"
-alias gd="git diff"
+# use neovim as pager for git diff
+gd() {
+    git diff "$@" | nvim -R
+}
 
 # programs
 alias timer="sowon"
@@ -34,4 +37,6 @@ alias eflut="source $HOME/env/flutter.sh"
 # apt
 alias aptu="sudo apt update"
 alias aptuu="sudo apt update && sudo apt upgrade -y"
+alias apti="sudo apt install -y"
+alias aptp="sudo apt purge"
 
