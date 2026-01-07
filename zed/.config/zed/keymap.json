@@ -9,44 +9,50 @@
   {
     "context": "!Terminal",
     "bindings": {
-      "ctrl-shift-c": null
-    }
+      "ctrl-shift-c": null,
+    },
   },
   {
     "context": "KeymapEditor",
     "bindings": {
-      "ctrl-shift-c": null
-    }
+      "ctrl-shift-c": null,
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-shift-c": null
-    }
+      "ctrl-shift-c": null,
+    },
   },
   {
-    "bindings": {}
+    "bindings": {},
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "k j": "vim::NormalBefore"
-    }
+      "k j": "vim::NormalBefore",
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "J": ["workspace::SendKeystrokes", "5 j z z"],
       "K": ["workspace::SendKeystrokes", "5 k z z"],
-      "space p": "file_finder::Toggle"
-    }
+      "space p": "file_finder::Toggle",
+    },
   },
   {
     "context": "Editor && vim_mode == visual",
     "bindings": {
       "J": ["workspace::SendKeystrokes", "5 j z z"],
-      "K": ["workspace::SendKeystrokes", "5 k z z"]
-    }
+      "K": ["workspace::SendKeystrokes", "5 k z z"],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "=": ["workspace::SendKeystrokes", "m a g g V G = ` a"],
+    },
   },
   {
     "context": "Workspace",
@@ -60,7 +66,7 @@
       "alt-h": "pane::ActivatePreviousItem",
       "alt-l": "pane::ActivateNextItem",
       "alt-j": "menu::SelectNext",
-      "alt-k": "menu::SelectPrevious"
-    }
-  }
+      "alt-k": "menu::SelectPrevious",
+    },
+  },
 ]

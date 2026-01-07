@@ -8,7 +8,7 @@ vim.keymap.set('n', '<leader>cm', builtin.man_pages, { desc = 'Telescope man pag
 vim.keymap.set('n', '<leader>cc', builtin.colorscheme, { desc = 'Telescope colorschemes' })
 
 -- indent entire file
-vim.keymap.set('n', '<leader>=','gg=G', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>=','magg=G`a', { noremap = true, silent = true })
 
 -- netrw keybindings
 vim.keymap.set('n', '<leader>t', ":Ex<CR>", {noremap = true, silent = true })
