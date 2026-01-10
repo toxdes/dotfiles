@@ -16,11 +16,11 @@ set $right l
 # Your preferred terminal emulator
 set $terminal foot
 # Your preferred application launcher
-set $menu rofi -drun-use-desktop-cache -show drun
+set $menu rofi -drun-use-desktop-cache -show drun -m 0
 # Your browser
 set $browser /opt/zen/zen
 # Your clipboard manager
-set $clipboard cliphist list | rofi -dmenu -i -p "Clipboard:" | cliphist decode | wl-copy
+set $clipboard cliphist list | rofi -dmenu -m 0 -i -p "clipboard" | cliphist decode | wl-copy
 # Your file manager
 set $fileManager thunar
 set $scripts ~/pro/python-scripts 

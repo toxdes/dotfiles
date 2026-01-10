@@ -1,0 +1,171 @@
+/**
+ * Common styling for all Rofi themes
+ * Import this after defining color variables
+ */
+
+window {
+    background-color:            @background;
+    border:                      4px;
+    border-color:                @background-alt;
+    border-radius:               8px;
+    padding:                     8px;
+}
+
+mainbox {
+    background-color:            @background;
+    children:                    [ inputbar, message, listview ];
+    spacing:                     8px;
+}
+
+inputbar {
+    background-color:            @background-alt;
+    border-color:                @selected;
+    border-radius:               8px;
+    padding:                     12px;
+    spacing:                     8px;
+    children:                    [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+prompt {
+    background-color:            inherit;
+    text-color:                  @selected;
+}
+
+textbox-prompt-colon {
+    background-color:            inherit;
+    text-color:                  @selected;
+    expand:                      false;
+    str:                         "|";
+}
+
+entry {
+    background-color:            inherit;
+    text-color:                  @foreground;
+    cursor:                      @selected;
+    placeholder:                 "Type to filter...";
+    placeholder-color:           @base01;
+}
+
+case-indicator {
+    background-color:            inherit;
+    text-color:                  @base01;
+}
+
+message {
+    background-color:            @background-alt;
+    border-color:                @separatorcolor;
+    border:                      2px;
+    border-radius:               8px;
+    padding:                     8px;
+}
+
+textbox {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+listview {
+    background-color:            @background;
+    border:                      0px;
+    padding:                     4px 0px;
+    scrollbar:                   false;
+    spacing:                     0px;
+}
+
+scrollbar {
+    background-color:            @background-alt;
+    handle-color:                @selected;
+    handle-width:                4px;
+    border-radius:               2px;
+    padding:                     0px 4px;
+}
+
+element {
+    background-color:            @background;
+    text-color:                  @foreground;
+    border-radius:               8px;
+    padding:                     12px;
+    spacing:                     12px;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @base3;
+}
+
+element normal.active {
+    background-color:            @background-alt;
+    text-color:                  @active;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @base3;
+}
+
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @base3;
+}
+
+element selected.active {
+    background-color:            @active;
+    text-color:                  @base3;
+}
+
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.urgent {
+    background-color:            @urgent;
+    text-color:                  @base3;
+}
+
+element alternate.active {
+    background-color:            @background-alt;
+    text-color:                  @active;
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        1em;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+mode-switcher {
+    background-color:            @background-alt;
+    border:                      2px;
+    border-color:                @separatorcolor;
+    border-radius:               8px;
+    spacing:                     4px;
+}
+
+button {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    padding:                     8px;
+}
+
+button selected {
+    background-color:            @selected;
+    text-color:                  @base3;
+}
+
+error-message {
+    background-color:            @background;
+    border:                      2px;
+    border-color:                @urgent;
+    border-radius:               4px;
+    padding:                     10px;
+}

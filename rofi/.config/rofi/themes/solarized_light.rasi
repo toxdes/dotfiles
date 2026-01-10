@@ -1,0 +1,41 @@
+/**
+ * Solarized Light theme for Rofi
+ * Based on Solarized Light color palette from Zed theme
+ */
+
+* {
+    /* Solarized Light Color Palette */
+    base03:    #002B36;
+    base02:    #073642;
+    base01:    #586E75;
+    base00:    #657B83;
+    base0:     #839496;
+    base1:     #93A1A1;
+    base2:     #EEE8D5;
+    base3:     #FDF6E3;
+    
+    /* Accent colors */
+    yellow:    #B58900;
+    orange:    #CB4B16;
+    red:       #DC322F;
+    magenta:   #D33682;
+    violet:    #6C71C4;
+    blue:      #268BD2;
+    cyan:      #2AA198;
+    green:     #859900;
+
+    /* Theme colors */
+    background:                  @base3;
+    background-alt:              @base2;
+    foreground:                  @base00;
+    selected:                    @blue;
+    active:                      @cyan;
+    urgent:                      @red;
+    
+    background-color:            transparent;
+    text-color:                  @foreground;
+    border-color:                @base1;
+    separatorcolor:              @base1;
+}
+
+@import "styles.rasi"
