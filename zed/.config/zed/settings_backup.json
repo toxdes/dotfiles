@@ -85,8 +85,8 @@
     "light": "Catppuccin Latte - No Italics",
     "dark": "Solarized Dark Spring",
   },
-  "edit_predictions": {
-    "provider": "none",
+  "features": {
+    "edit_prediction_provider": "none",
   },
   "agent": {
     "enabled": false,
