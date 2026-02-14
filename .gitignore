@@ -1,1 +1,3 @@
 config-files/arch/nvim/plugged
+geany/.config/geany/session.conf
+geany/.config/geany/tags/
