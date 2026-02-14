@@ -10,6 +10,7 @@ alias gf="git fetch origin"
 alias gp="git push origin"
 alias gr="git rebase -i"
 alias gb="git branch"
+
 # use neovim as pager for git diff
 gd() {
     git diff "$@" | nvim -R
@@ -33,6 +34,7 @@ alias days="$PYTHON_SCRIPTS/days.py"
 # envs
 alias ego="source $HOME/env/go.sh"
 alias eflut="source $HOME/env/flutter.sh"
+alias erust="source $HOME/env/rust.sh"
 
 # apt
 alias aptu="sudo apt update"
@@ -40,3 +42,8 @@ alias aptuu="sudo apt update && sudo apt upgrade -y"
 alias apti="sudo apt install -y"
 alias aptp="sudo apt purge"
 
+# todo
+alias todo="nvim ~/todo.md"
+
+# sway with unsupported gpu
+alias swayyy="sway --unsupported-gpu"

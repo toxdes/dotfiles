@@ -166,3 +166,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # glesha
 export GLESHA_INSTALL="$HOME/.glesha"
 export PATH="$GLESHA_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/bets/.opencode/bin:$PATH
