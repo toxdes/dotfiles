@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $terminal foot
 # Your preferred application launcher
-set $menu rofi -drun-use-desktop-cache -show drun -m 0
+set $menu rofi -use-desktop-cache -show drun -m 0
 # Your browser
 set $browser /opt/zen/zen
 # Your clipboard manager
