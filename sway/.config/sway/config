@@ -32,10 +32,21 @@ output eDP-1 pos 1920 0 res 1920x1080
 
 
 include /etc/sway/config-vars.d/*
+
+# Explicitly set XDG_CURRENT_DESKTOP for systemd
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+
+# Import the environment variables
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+# Update D-Bus activation environment
 exec hash dbus-update-activation-environment 2>/dev/null && \
         dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+
+# Start xdg-desktop-portal (workaround for missing graphical-session.target)
+exec /usr/libexec/xdg-desktop-portal --replace
 exec waybar
+
 exec nm-applet
 exec wl-paste --watch cliphist store
 exec easyeffects --gapplication-service
