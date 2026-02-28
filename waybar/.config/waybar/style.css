@@ -121,9 +121,8 @@
 * {
     /* Base styling for all modules */
     border: none;
-    border-radius: 0;
-    font-family: "IosBerkMono Medium";
-    font-size: 11px;
+    font-family: "IosBerkMono";
+    font-size: 9px;
     min-height: 0;
 }
 
@@ -137,15 +136,15 @@ window#waybar {
 #memory, #temperature, #battery, #network, #pulseaudio,
 #backlight, #disk, #custom-uptime, #custom-updates, #custom-quote, #custom-ip
 #idle_inhibitor, #tray {
-  margin: 0px 0px;
-    padding: 0px 10px;
+    padding: 0px 12px;
     background-color: transparent;
 }
 
 /* Workspaces styling */
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 8px;
     background-color: transparent;
+    border-radius:0px;
     color: @workspaces-color;
     margin: 0;
 }
@@ -321,7 +320,6 @@ window#waybar {
     background-color: @tray-color;
     color: @background;
     padding: 0px 10px;
-    margin: 0px 0px;
 }
 
 #tray > .passive {
