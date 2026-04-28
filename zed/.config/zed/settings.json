@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "tabs": {
     "file_icons": true,
@@ -29,7 +35,7 @@
   },
   "buffer_font_family": "IosBerkMono",
   "buffer_font_weight": 400.0,
-  "buffer_font_size": 13,
+  "buffer_font_size": 14.0,
   "buffer_line_height": "comfortable",
   "ui_font_family": "IosBerkMono",
   "title_bar": {
@@ -82,13 +88,14 @@
   },
   "theme": {
     "mode": "dark",
-    "light": "Catppuccin Latte - No Italics",
+    "light": "Solarized Light Spring",
     "dark": "Solarized Dark Spring",
   },
   "edit_predictions": {
     "provider": "none",
   },
   "agent": {
+    "dock": "right",
     "enabled": false,
   },
   "telemetry": null,
