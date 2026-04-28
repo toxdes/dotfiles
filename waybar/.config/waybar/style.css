@@ -1,3 +1,4 @@
+@import "/home/bets/hyprwhspr/config/waybar/hyprwhspr-style.css";
 /*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one.*/
 
 
@@ -121,8 +122,8 @@
 * {
     /* Base styling for all modules */
     border: none;
-    font-family: "IosBerkMono";
-    font-size: 9px;
+    font-family: "IosBerkMono SemiBold";
+    font-size: 11px;
     min-height: 0;
 }
 

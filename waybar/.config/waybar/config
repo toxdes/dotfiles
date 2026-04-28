@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
-    "position": "bottom",
-    "height": 14,
+    "position": "top",
+    "height": 18,
     "margin-top": 0,
     "margin-left":  0,
     "margin-right": 0,

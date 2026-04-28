@@ -160,8 +160,6 @@ exec lxpolkit
     workspace 9 output eDP-1
     workspace 10 output eDP-1
 
-    # keybind to disable external monitor
-    bindsym $mod+p exec 
 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
@@ -279,12 +277,17 @@ bindsym $mod+t exec $fileManager
 bindsym $mod+g exec $browser
 bindsym $mod+c exec $clipboard
 bindsym $mod+i exec sowon -p 40m
+bindsym $mod+p exec bitwarden
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+button2 resize
 bindsym $mod+semicolon floating toggle, sticky toggle
 bindsym Control+Mod1+1 exec $scripts/display.py laptop_only
 bindsym Control+Mod1+2 exec $scripts/display.py external_extends_laptop
+bindsym Control+Mod1+3 exec $scripts/display.py external_only
+# lock, turn off keyboard lights and suspend
+bindsym $mod+Delete exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+Shift+Delete  exec swaylock -f -c 000000 && systemctl suspend
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -322,5 +325,6 @@ default_floating_border pixel 1
 # Set a random wallpaper on startup
 exec swaybg -i "$(find ~/Pictures/walls -type f | shuf -n 1)" -m fill
 
-# set youtube-music always in float
-for_window [class="com.github.th_ch.youtube_music"] floating enable
+# set some apps to always in float
+for_window [class="com.github.th_ch.youtube_music"] floating enable, resize set 1280 720, move position center
+for_window [class="Bitwarden"] floating enable, resize set 1280 720, move position center
