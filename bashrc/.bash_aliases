@@ -45,5 +45,8 @@ alias aptp="sudo apt purge"
 # todo
 alias todo="nvim ~/todo.md"
 
-# sway with unsupported gpu
-alias swayyy="sway --unsupported-gpu"
+# start sway with unsupported gpu
+alias sw="sway --unsupported-gpu"
+
+# tmux
+alias t="tmux"
