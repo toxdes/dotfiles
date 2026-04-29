@@ -207,8 +207,8 @@ exec lxpolkit
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
-    bindsym $mod+u exec $scripts/wlsunset.py
-    bindsym $mod+Shift+u exec $scripts/wlsunset.py kill
+    bindsym $mod+u exec $scripts/sway/wlsunset.py
+    bindsym $mod+Shift+u exec $scripts/sway/wlsunset.py kill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -282,11 +282,11 @@ bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+button2 resize
 bindsym $mod+semicolon floating toggle, sticky toggle
-bindsym Control+Mod1+1 exec $scripts/display.py laptop_only
-bindsym Control+Mod1+2 exec $scripts/display.py external_extends_laptop
-bindsym Control+Mod1+3 exec $scripts/display.py external_only
+bindsym Control+Mod1+1 exec $scripts/sway/display.py laptop_only
+bindsym Control+Mod1+2 exec $scripts/sway/display.py external_extends_laptop
+bindsym Control+Mod1+3 exec $scripts/sway/display.py external_only
 # lock, turn off keyboard lights and suspend
-bindsym $mod+Delete exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+Delete exec $scripts/rofi/powermenu.py
 bindsym $mod+Shift+Delete  exec swaylock -f -c 000000 && systemctl suspend
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPause exec playerctl play-pause
@@ -322,8 +322,9 @@ default_border pixel 1
 default_floating_border pixel 1
 # hide_edge_borders both
 
-# Set a random wallpaper on startup
-exec swaybg -i "$(find ~/Pictures/walls -type f | shuf -n 1)" -m fill
+# Set random wallpapers on startup
+exec $scripts/sway/wallpaper.py
+bindsym $mod+Page_Up exec $scripts/sway/wallpaper.py
 
 # set some apps to always in float
 for_window [class="com.github.th_ch.youtube_music"] floating enable, resize set 1280 720, move position center

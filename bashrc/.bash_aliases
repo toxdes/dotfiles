@@ -28,8 +28,8 @@ alias ls="eza"
 
 # scripts
 export PYTHON_SCRIPTS="$HOME/pro/python-scripts"
-alias pc="python3 -i $PYTHON_SCRIPTS/imports.py"
-alias days="$PYTHON_SCRIPTS/days.py"
+alias pc="python3 -i $PYTHON_SCRIPTS/utils/imports.py"
+alias days="$PYTHON_SCRIPTS/utils/days.py"
 
 # envs
 alias ego="source $HOME/env/go.sh"
