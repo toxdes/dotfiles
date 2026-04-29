@@ -1,0 +1,59 @@
+[global]
+    font = "IosBerkMono 13"
+
+    # Padding
+    padding = 12
+    horizontal_padding = 20
+    text_icon_padding = 12
+    gap = 6
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 64
+
+    # Layout
+    origin = top-right
+    offset = (0, 26)
+    geometry = "350x5"
+    separator_color = frame
+    frame_width = 2
+    sort = yes
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_age_threshold = 60
+    word_wrap = true
+    ignore_newline = false
+    idle_threshold = 120
+
+    # Misc
+    browser = /usr/bin/xdg-open
+    markup = full
+    format = "<b>%s</b><span font_desc='IosBerkMono 10'>\n\n%b</span>"
+
+[shortcuts]
+    context = ctrl+space
+    close_all = ctrl+grave
+    close = ctrl+period
+
+[urgency_low]
+    background = "#292D3E"
+    foreground = "#eeffff"
+    highlight = "#c792ef"
+    frame_color = "#676E95"
+    timeout = 6
+
+[urgency_normal]
+    background = "#292D3E"
+    foreground = "#eeffff"
+    highlight = "#c792ef"
+    frame_color = "#82aaff"
+    timeout = 8
+
+[urgency_critical]
+    background = "#292D3E"
+    foreground = "#eeffff"
+    highlight = "#f07178"
+    frame_color = "#f07178"
+    timeout = 0
