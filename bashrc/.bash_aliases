@@ -50,3 +50,8 @@ alias sw="sway --unsupported-gpu"
 
 # tmux
 alias t="tmux"
+
+# tailnet
+tnssh() {
+  ssh $1.tn.toxdes.com
+}

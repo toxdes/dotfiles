@@ -5,14 +5,30 @@ import = [
 
 [window]
 opacity = 1
-padding.x = 4
-padding.y = 4
+padding = { x = 2, y = 2 }
 decorations = "Full"
+dimensions = { columns = 140, lines = 40 }
 
 [font]
-normal.family = "Iosevka Nerd Font SemiBold"
-bold.family = "Iosevka Nerd Font SemiBold"
-size = 12.0
+normal.family = "IosBerkMono Light"
+bold.family = "IosBerkMono"
+bold.style = "Medium"
+italic.family = "IosBerkMono"
+bold_italic.family = "IosBerkMono"
+bold_italic.style = "Medium"
+size = 10.75
+offset.y = 0
+
+[selection]
+save_to_clipboard = false
+
+[cursor.style]
+blinking = "On"
+
+[mouse]
+bindings = [
+  { mouse = "Right", action = "Copy" }
+]
 
 # [terminal.shell]
 # program = "/usr/bin/tmux"

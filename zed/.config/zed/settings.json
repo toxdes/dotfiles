@@ -7,11 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "new_window",
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "tabs": {
@@ -24,7 +25,6 @@
     "use_system_clipboard": "on_yank",
     "use_smartcase_find": false,
   },
-  "text_rendering_mode": "subpixel",
   "ui_font_weight": 400.0,
   "project_panel": {
     "button": true,
@@ -35,7 +35,7 @@
   },
   "buffer_font_family": "IosBerkMono",
   "buffer_font_weight": 400.0,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 14,
   "buffer_line_height": "comfortable",
   "ui_font_family": "IosBerkMono",
   "title_bar": {
@@ -43,7 +43,6 @@
     "show_onboarding_banner": false,
     "show_menus": false,
     "show_user_picture": false,
-    "show_branch_icon": true,
     "show_branch_name": true,
     "show_project_items": true,
   },
@@ -55,11 +54,11 @@
   },
   "ui_font_size": 13.0,
   "terminal": {
-    "font_size": 12.0,
+    "font_size": 13.0,
     "font_family": "IosBerkMono",
     "font_weight": 400,
     "line_height": {
-      "custom": 1.5,
+      "custom": 1.2,
     },
     "cursor_shape": "underline",
     "blinking": "off",

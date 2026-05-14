@@ -7,9 +7,11 @@
     "margin-right": 0,
     "margin-bottom": 0,
     "modules-left": [
-      "sway/workspaces",
-    "custom/space",
-    "sway/window",
+        "sway/workspaces",
+        "custom/space",
+        "sway/mode",
+        "custom/space",
+        "sway/window",
     ],
     "modules-right": [
       "custom/ip",
@@ -31,8 +33,12 @@
       "icon-size": 14,
     },
     "sway/workspaces": {
-      "disable-scroll":true,
-      "format": "󰣇 [{name}]",
+        "disable-scroll":true,
+        "format": "󰣇 [{name}]",
+    },
+    "sway/mode": {
+        "format": "[{}]",
+        "tooltip": false,
     },
     "custom/ip": {
       "exec": "ip route get 1 | awk '{print $7; exit}'",

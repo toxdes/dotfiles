@@ -169,3 +169,4 @@ export PATH="$GLESHA_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/home/bets/.opencode/bin:$PATH
+. "$HOME/.cargo/env"

@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $terminal foot
+set $terminal alacritty
 # Your preferred application launcher
 set $menu rofi -use-desktop-cache -show drun -m 0
 # Your browser
@@ -28,7 +28,7 @@ font pango:IosBerkMono SemiBold 8
 
 # Display
 output HDMI-A-1 pos 0 0 res 1920x1080
-output eDP-1 pos 1920 0 res 1920x1080
+output eDP-1 pos 1920 0 res 1920x1080 scale 1.25
 
 
 include /etc/sway/config-vars.d/*
@@ -96,8 +96,8 @@ exec lxpolkit
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Return exec $terminal
+    # Start a terminal - alacritty: spawn a new-window, or run alacritty
+    bindsym $mod+Return exec $terminal msg create-window || $terminal
     # youtube-music
     bindsym $mod+y exec youtube-music
 
@@ -318,8 +318,8 @@ client.placeholder      $border     $bg         $fg-inactive $border     $border
 client.background       $bg
 
 # Additional styling
-default_border pixel 1
-default_floating_border pixel 1
+default_border normal
+default_floating_border normal
 # hide_edge_borders both
 
 # Set random wallpapers on startup

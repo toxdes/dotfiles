@@ -123,6 +123,7 @@
     /* Base styling for all modules */
     border: none;
     font-family: "IosBerkMono SemiBold";
+    font-weight: 400;
     font-size: 11px;
     min-height: 0;
 }
