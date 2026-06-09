@@ -7,7 +7,7 @@ import = [
 opacity = 1
 padding = { x = 2, y = 2 }
 decorations = "Full"
-dimensions = { columns = 140, lines = 40 }
+dimensions = { columns = 80, lines = 24 }
 
 [font]
 normal.family = "IosBerkMono Light"
@@ -23,7 +23,7 @@ offset.y = 0
 save_to_clipboard = false
 
 [cursor.style]
-blinking = "On"
+blinking = "Off"
 
 [mouse]
 bindings = [

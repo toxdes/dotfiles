@@ -4,6 +4,8 @@
 
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:/opt/zen"
+PATH="$PATH:$HOME/.local/share/pnpm/bin"
+PATH="$PATH:$HOME/.opencode/bin"
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export EDITOR="nvim"
@@ -96,16 +98,6 @@ fi
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 ### added by cp-setup script - start
-git_ps1() {
-  # Prints nothing outside a git repo; otherwise prints: "󰘬 (branch*+)"
-  export GIT_PS1_SHOWDIRTYSTATE=1
-  export GIT_PS1_SHOWUNTRACKEDFILES=1   # adds '%' when untracked files exist
-  local s="$(__git_ps1 "(%s)")"
-  # [[ -n "$s" ]] && printf "\e[36m%s\e[0m" "$s"
-  [[ -n "$s" ]] && printf "\e[36m 󰘬 %s\e[0m" "$s"
-}
-#PS1='\[\e[0;34m\]\[\e[0;31m\]\W\[\e[0m\]$(git_ps1)\[\e[0;31m\]$ \[\e[0m\]'
-PS1='\[\e[0;34m\]\[\e[0;31m\]  \W\[\e[0m\]$(git_ps1)\[\e[0;31m\] ❯ \[\e[0m\]'
 
 alias cph="python3 $HOME/cp/cph.py &"
 ccp() {
@@ -155,6 +147,17 @@ jr() {
 ### added by cp-setup script - end
 
 
+git_ps1() {
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export GIT_PS1_SHOWUNTRACKEDFILES=1
+  local g
+  g="$(GIT_PS1_SHOWCOLORHINTS= __git_ps1 "(%s)")"
+  [[ -n "$g" ]] && g="\[\e[36m\] 󰘬 ${g}\[\e[0m\]"
+  PS1="\[\e[0;34m\]\[\e[0;31m\]  \W\[\e[0m\]${g}\[\e[0;31m\] ❯ \[\e[0m\]"
+}
+
+PROMPT_COMMAND=git_ps1
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -170,3 +173,11 @@ export PATH="$GLESHA_INSTALL/bin:$PATH"
 # opencode
 export PATH=/home/bets/.opencode/bin:$PATH
 . "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/bets/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

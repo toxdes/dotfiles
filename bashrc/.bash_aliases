@@ -55,3 +55,9 @@ alias t="tmux"
 tnssh() {
   ssh $1.tn.toxdes.com
 }
+
+# save png from clipboard
+pngpaste(){
+  fname="${1:-$(date +%s).png}"
+  cliphist list | head -n1 | cliphist decode > "$fname"
+}
