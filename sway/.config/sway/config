@@ -26,6 +26,7 @@ set $clipboard cliphist list | rofi -dmenu -m 0 -i -p "clipboard" | cliphist dec
 set $fileManager thunar
 set $scripts ~/pro/python-scripts 
 font pango:IosBerkMono SemiBold 8
+seat * xcursor_theme Bibata-Modern-Amber 24
 
 # Display
 output HDMI-A-1 pos 0 0 res 1920x1080

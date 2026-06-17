@@ -10,7 +10,7 @@ decorations = "Full"
 dimensions = { columns = 80, lines = 24 }
 
 [font]
-normal.family = "IosBerkMono Light"
+normal.family = "IosBerkMono"
 bold.family = "IosBerkMono"
 bold.style = "Medium"
 italic.family = "IosBerkMono"
