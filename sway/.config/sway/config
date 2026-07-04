@@ -93,6 +93,9 @@ exec lxpolkit
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input type:keyboard {
+xkb_options ctrl:nocaps
+}
 
 ### Key bindings
 #
@@ -322,7 +325,7 @@ client.placeholder      $border     $bg         $fg-inactive $border     $border
 client.background       $bg
 
 # Additional styling
-default_border normal
+default_border pixel 2
 default_floating_border normal
 # hide_edge_borders both
 
@@ -334,3 +337,4 @@ bindsym $mod+Page_Up exec $scripts/sway/wallpaper.py
 for_window [class="com.github.th_ch.youtube_music"] floating enable, resize set 1280 720, move position center
 for_window [class="Bitwarden"] floating enable, resize set 1280 720, move position center
 for_window [app_id="com.toxdes.promptr"] floating enable, move position center
+for_window [app_id="thunderbird"] floating enable, resize set 1280 720, move position center

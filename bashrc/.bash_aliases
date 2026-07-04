@@ -35,6 +35,7 @@ alias days="$PYTHON_SCRIPTS/utils/days.py"
 alias ego="source $HOME/env/go.sh"
 alias eflut="source $HOME/env/flutter.sh"
 alias erust="source $HOME/env/rust.sh"
+alias ejava="source $HOME/env/java.sh"
 
 # apt
 alias aptu="sudo apt update"

@@ -153,7 +153,7 @@ git_ps1() {
   local g
   g="$(GIT_PS1_SHOWCOLORHINTS= __git_ps1 "(%s)")"
   [[ -n "$g" ]] && g="\[\e[36m\] 󰘬 ${g}\[\e[0m\]"
-  PS1="\[\e[0;34m\]\[\e[0;31m\]  \W\[\e[0m\]${g}\[\e[0;31m\] ❯ \[\e[0m\]"
+  PS1="\[\e[0;34m\]\[\e[0;31m\]  \W\[\e[0m\]${g}\[\e[0;31m\] ❯ \[\e[0m\]"
 }
 
 PROMPT_COMMAND=git_ps1

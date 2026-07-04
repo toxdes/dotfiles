@@ -33,9 +33,10 @@
   "git_panel": {
     "dock": "right",
   },
+  "text_rendering_mode": "grayscale",
   "buffer_font_family": "IosBerkMono",
   "buffer_font_weight": 400.0,
-  "buffer_font_size": 14,
+  "buffer_font_size": 15.0,
   "buffer_line_height": "comfortable",
   "ui_font_family": "IosBerkMono",
   "title_bar": {
