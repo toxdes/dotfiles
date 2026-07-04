@@ -30,8 +30,8 @@
 | `serve` | `python3 -m http.server` | Start HTTP server in current directory |
 | `i` | `ping 8.8.8.8` | Check internet connectivity |
 | `py` | `python3` | Run Python 3 |
-| `pc` | `python3 -i $PYTHON_SCRIPTS/imports.py` | Python REPL with imports |
-| `days` | `$PYTHON_SCRIPTS/days.py` | Run days script |
+| `pc` | `python3 -i $PYS/imports.py` | Python REPL with imports |
+| `days` | `$PYS/days.py` | Run days script |
 
 ### Environments
 
