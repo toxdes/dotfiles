@@ -1,0 +1,6 @@
+*.sw?
+*.swo
+.netrwhist
+spell/
+tags
+node_modules/
