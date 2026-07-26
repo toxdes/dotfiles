@@ -19,12 +19,16 @@ gd() {
 # programs
 alias timer="sowon"
 alias v="nvim"
+alias ve='NVIM_APPNAME="nvim-dev" nvim'
 alias h="btop"
 alias offf="shutdown now"
 alias serve="python3 -m http.server"
 alias i="ping 8.8.8.8"
 alias py="python3"
 alias ls="eza"
+alias oc="opencode"
+alias occ="opencode --continue"
+
 
 # scripts
 export PYS="$HOME/pro/python-scripts"
@@ -42,6 +46,7 @@ alias aptu="sudo apt update"
 alias aptuu="sudo apt update && sudo apt upgrade -y"
 alias apti="sudo apt install -y"
 alias aptp="sudo apt purge"
+alias aptf="sudo apt install -f && sudo apt autoremove"
 
 # todo
 alias todo="nvim ~/todo.md"
