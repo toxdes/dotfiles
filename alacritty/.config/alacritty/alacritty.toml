@@ -13,8 +13,8 @@ dimensions = { columns = 80, lines = 24 }
 normal.family = "IosBerkMono"
 bold.family = "IosBerkMono"
 bold.style = "Medium"
-#  size = 12
-offset.y = -2
+size = 12.25
+offset.y = 0
 
 [selection]
 save_to_clipboard = false
