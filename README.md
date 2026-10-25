@@ -51,3 +51,18 @@ $ source ~/.profile
 ```
 
 Done :|
+
+## Color themes
+
+Everforest is an additional theme alongside Solarized. Everforest has six variants (`everforest_{light,dark}_{hard,medium,soft}`) for Alacritty, Waybar, Sway, tmux, and Rofi. The palettes use `sainnhe/everforest` at commit `85a86eb`. Solarized Dark and Light remain available in all of these apps.
+
+Each app has one active theme selector. Keep one palette selected in each:
+
+- **Alacritty:** choose an import in `alacritty/.config/alacritty/alacritty.toml`.
+- **Waybar:** choose an import at the top of `waybar/.config/waybar/style.css`.
+- **Sway:** choose the include in `sway/.config/sway/config`, then reload Sway.
+- **tmux:** choose the `source-file` in `tmux/.tmux.conf`, then reload tmux.
+- **Rofi:** choose the `@theme` in `rofi/.config/rofi/config.rasi` and the matching import in `rofi/.config/rofi/powermenu/type-1/shared/colors.rasi`.
+- **Neovim and nvim-dev:** change the `active_theme` assignment in each profile's `lua/plugins/colorschemes.lua` to one of the eight entries in its `themes` table. Lualine uses `auto` to follow the selected scheme.
+
+Everforest Dark Hard is the current default. The six Everforest choices and both Solarized modes are ready to select in every listed app.
