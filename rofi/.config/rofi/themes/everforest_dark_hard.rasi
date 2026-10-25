@@ -1,0 +1,41 @@
+/**
+ * Everforest Dark Hard theme for Rofi
+ * Palette source: sainnhe/everforest, upstream palette.md; commit 85a86eb.
+ */
+
+* {
+    /* Palette */
+    base03:    #1e2326;
+    base02:    #2e383c;
+    base01:    #7a8478;
+    base00:    #859289;
+    base0:     #d3c6aa;
+    base1:     #9da9a0;
+    base2:     #414b50;
+    base3:     #1e2326;
+
+    /* Accents */
+    yellow:    #dbbc7f;
+    orange:    #e69875;
+    red:       #e67e80;
+    magenta:   #d699b6;
+    violet:    #d699b6;
+    blue:      #7fbbb3;
+    cyan:      #83c092;
+    green:     #a7c080;
+
+    /* Theme roles */
+    background:       #272e33;
+    background-alt:   #2e383c;
+    foreground:       #d3c6aa;
+    selected:         #a7c080;
+    active:           #83c092;
+    urgent:           #e67e80;
+
+    background-color: transparent;
+    text-color:       @foreground;
+    border-color:     #414b50;
+    separatorcolor:   #374145;
+}
+
+@import "styles.rasi"

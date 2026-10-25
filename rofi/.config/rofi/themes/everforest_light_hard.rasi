@@ -1,0 +1,41 @@
+/**
+ * Everforest Light Hard theme for Rofi
+ * Palette source: sainnhe/everforest, upstream palette.md; commit 85a86eb.
+ */
+
+* {
+    /* Palette */
+    base03:    #1e2326;
+    base02:    #f8f5e4;
+    base01:    #a6b0a0;
+    base00:    #939f91;
+    base0:     #5c6a72;
+    base1:     #829181;
+    base2:     #edeada;
+    base3:     #1e2326;
+
+    /* Accents */
+    yellow:    #dfa000;
+    orange:    #f57d26;
+    red:       #f85552;
+    magenta:   #df69ba;
+    violet:    #df69ba;
+    blue:      #3a94c5;
+    cyan:      #35a77c;
+    green:     #8da101;
+
+    /* Theme roles */
+    background:       #fffbef;
+    background-alt:   #f8f5e4;
+    foreground:       #5c6a72;
+    selected:         #8da101;
+    active:           #35a77c;
+    urgent:           #f85552;
+
+    background-color: transparent;
+    text-color:       @foreground;
+    border-color:     #edeada;
+    separatorcolor:   #f2efdf;
+}
+
+@import "styles.rasi"

@@ -1,6 +1,15 @@
+@theme "everforest_dark_hard"
+/* Keep one theme active; uncomment the replacement and comment this line.
+@theme "everforest_dark_medium"
+@theme "everforest_dark_soft"
+@theme "everforest_light_hard"
+@theme "everforest_light_medium"
+@theme "everforest_light_soft"
 @theme "solarized_dark"
+@theme "solarized_light"
+*/
 configuration {
-	font: "IosBerkMono 12";
+	font: "Berkeley Mono NF 14";
 	show-icons: true;
 	icon-theme: "candy-icons";
 

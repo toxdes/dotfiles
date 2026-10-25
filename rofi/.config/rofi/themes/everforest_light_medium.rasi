@@ -1,0 +1,17 @@
+/**
+ * Everforest Light Medium theme
+ * Palette source: sainnhe/everforest, upstream palette.md; commit 85a86eb.
+ */
+
+* {
+    base03: #1e2326; base02: #f4f0d9; base01: #a6b0a0; base00: #939f91;
+    base0: #5c6a72; base1: #829181; base2: #e0dcc7; base3: #1e2326;
+    yellow: #dfa000; orange: #f57d26; red: #f85552; magenta: #df69ba;
+    violet: #df69ba; blue: #3a94c5; cyan: #35a77c; green: #8da101;
+    background: #fdf6e3; background-alt: #f4f0d9; foreground: #5c6a72;
+    selected: #8da101; active: #35a77c; urgent: #f85552;
+    background-color: transparent; text-color: @foreground;
+    border-color: #e0dcc7; separatorcolor: #ebe6d0;
+}
+
+@import "styles.rasi"

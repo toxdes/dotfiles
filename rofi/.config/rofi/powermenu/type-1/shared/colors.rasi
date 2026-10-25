@@ -15,4 +15,14 @@
 
 /* Import color-scheme from `colors` directory */
 
+@import "~/.config/rofi/themes/everforest_dark_hard.rasi"
+/* Keep this import aligned with config.rasi; uncomment one replacement and
+ * comment out the active import.
+@import "~/.config/rofi/themes/everforest_dark_medium.rasi"
+@import "~/.config/rofi/themes/everforest_dark_soft.rasi"
+@import "~/.config/rofi/themes/everforest_light_hard.rasi"
+@import "~/.config/rofi/themes/everforest_light_medium.rasi"
+@import "~/.config/rofi/themes/everforest_light_soft.rasi"
 @import "~/.config/rofi/themes/solarized_dark.rasi"
+@import "~/.config/rofi/themes/solarized_light.rasi"
+*/
