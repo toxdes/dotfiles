@@ -24,24 +24,33 @@ set $alt_browser /usr/bin/google-chrome
 set $clipboard cliphist list | rofi -dmenu -m 0 -i -p "clipboard" | cliphist decode | wl-copy
 # Your file manager
 set $fileManager thunar
-set $scripts ~/pro/python-scripts 
+set $scripts ~/pro/python-scripts
 
-font pango:IosBerkMono SemiBold 8
+font pango:Berkeley Mono 8
 seat * xcursor_theme Bibata-Modern-Amber 24
 
 # Display
 output HDMI-A-1 pos 0 0 res 1920x1080
 output eDP-1 pos 1920 0 res 1920x1080
 
-exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway XDG_SESSION_TYPE=wayland WAYLAND_DISPLAY WLR_NO_HARDWARE_CURSORS GBM_BACKEND __GLX_VENDOR_LIBRARY_NAME
+exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway XDG_SESSION_TYPE=wayland WAYLAND_DISPLAY WLR_NO_HARDWARE_CURSORS GBM_BACKEND __GLX_VENDOR_LIBRARY_NAME QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
 include /etc/sway/config-vars.d/*
 
 exec waybar
 
 exec nm-applet
+exec blueman-applet
 exec wl-paste --watch cliphist store
 exec easyeffects --gapplication-service
 exec lxpolkit
+
+# Start Mousr with Sway.
+set $mousr mousr
+# set $mousr /home/bets/.cargo/bin/mousr
+# set $mousr /home/bets/pro/real/mousr/target/release/mousr
+set $mousr_dir /home/bets/.local/state/mousr
+exec $mousr daemon --log-level debug --log-file "$mousr_dir/daemon-log.json"
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -82,8 +91,8 @@ exec lxpolkit
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input type:keyboard {
-xkb_options ctrl:nocaps
+input * {
+  xkb_file ~/.config/sway/keymap.xkb
 }
 
 input type:pointer {
@@ -97,14 +106,13 @@ input type:pointer {
 #
     # Start a terminal - alacritty: spawn a new-window, or run alacritty
     bindsym $mod+Return exec $terminal msg create-window || $terminal
-    # youtube-music
-    bindsym $mod+y exec youtube-music
 
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Tab exec $scripts/sway/window_picker.py
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -261,8 +269,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl s 10%+
     # Special key to take a screenshot with grim
     bindsym Print exec grimshot save area
-    bindsym $mod+o exec grimshot copy area
-    bindsym $mod+Shift+o exec grimshot save area
+    bindsym $mod+o exec mkdir -p "$HOME/Pictures/screenshots" && grimshot savecopy area "$HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S_%N).png"
+    bindsym $mod+Shift+o exec grimshot save output
 
 #
 # Status Bar:
@@ -275,9 +283,13 @@ include /etc/sway/config.d/*
 bindsym $mod+t exec $fileManager
 bindsym $mod+g exec $browser
 bindsym $mod+Shift+g exec $alt_browser
+bindsym $mod+n exec --no-startup-id gtk-launch chrome-ofkiaegglmgkpaelcapkcfipbglfokkm-Profile_1
 bindsym $mod+c exec $clipboard
-bindsym $mod+i exec sowon -p 40m
-bindsym $mod+p exec bitwarden
+bindsym $mod+i exec ~/.local/bin/sonora
+bindsym $mod+Shift+i exec sowon -p 40m
+bindsym $mod+p exec python3 $scripts/utils/bwro.py select
+bindsym $mod+Mod1+p exec python3 $scripts/utils/bwro.py refresh
+bindsym $mod+Shift+p exec python3 $scripts/utils/bwro.py type
 bindsym $mod+x exec promptr
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
@@ -294,20 +306,60 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 
-# Color Definitions
-set $bg           #292D3E
-set $bg-inactive  #34324a
-set $fg           #A6ACCD
-set $fg-inactive  #676E95
-set $blue         #82aaff
-set $cyan         #89ddff
-set $purple       #c792ea
-set $red          #f07178
-set $orange       #f78c6c
-set $yellow       #ffcb6b
-set $green        #c3e88d
-set $border       #2b2a3e
-set $urgent       #ff5370
+
+# Alt+Space: grid mode
+# bindsym Mod1+space exec $mousr grid --scope all --log-level debug --log-file "$mousr_dir/grid-log.json"
+bindsym Mod1+space exec $mousr grid --scope all
+
+# Alt+Shift+Space: mouse mode
+# bindsym Mod1+Shift+space exec $mousr mouse --log-level debug --log-file "$mousr_dir/mouse-log.json"
+bindsym Mod1+Shift+space exec $mousr mouse
+
+bindsym --inhibited Mod4+bracketleft exec $mousr scroll down --step 20
+bindsym --inhibited Mod4+bracketright exec $mousr scroll up --step 20
+bindsym --inhibited Mod4+backslash exec $mousr click left
+
+# Color Definitions - Palenight
+# set $bg           #292D3E
+# set $bg-inactive  #34324a
+# set $fg           #A6ACCD
+# set $fg-inactive  #676E95
+# set $blue         #82aaff
+# set $cyan         #89ddff
+# set $purple       #c792ea
+# set $red          #f07178
+# set $orange       #f78c6c
+# set $yellow       #ffcb6b
+# set $green        #c3e88d
+# set $border       #2b2a3e
+# set $urgent       #ff5370
+
+# Color Definitions - Solarized Dark
+# set $bg           #002b36
+# set $bg-inactive  #073642
+# set $fg           #839496
+# set $fg-inactive  #586e75
+# set $blue         #268bd2
+# set $cyan         #2aa198
+# set $purple       #6c71c4
+# set $red          #dc322f
+# set $orange       #cb4b16
+# set $yellow       #b58900
+# set $green        #859900
+# set $border       #073642
+# set $urgent       #dc322f
+
+# Keep one palette active; uncomment the replacement and comment this include.
+include ~/.config/sway/themes/everforest_dark_hard.conf
+# Everforest alternatives:
+# include ~/.config/sway/themes/everforest_dark_medium.conf
+# include ~/.config/sway/themes/everforest_dark_soft.conf
+# include ~/.config/sway/themes/everforest_light_hard.conf
+# include ~/.config/sway/themes/everforest_light_medium.conf
+# include ~/.config/sway/themes/everforest_light_soft.conf
+# Solarized alternatives:
+# include ~/.config/sway/themes/solarized_dark.conf
+# include ~/.config/sway/themes/solarized_light.conf
 
 # Window Colors
 #                       border      background  text         indicator   child_border
@@ -319,8 +371,10 @@ client.placeholder      $border     $bg         $fg-inactive $border     $border
 client.background       $bg
 
 # Additional styling
-default_border pixel 2
-default_floating_border normal
+default_border pixel 3
+default_floating_border pixel 3
+# gaps inner 0
+# gaps outer 0
 # hide_edge_borders both
 
 # Set random wallpapers on startup
@@ -328,7 +382,10 @@ exec $scripts/sway/wallpaper.py
 bindsym $mod+Page_Up exec $scripts/sway/wallpaper.py
 
 # set some apps to always in float
-for_window [class="com.github.th_ch.youtube_music"] floating enable, resize set 1280 720, move position center
-for_window [class="Bitwarden"] floating enable, resize set 1280 720, move position center
-for_window [app_id="com.toxdes.promptr"] floating enable, move position center
-for_window [app_id="thunderbird"] floating enable, resize set 1280 720, move position center
+set $fw 1440
+set $fh 960
+for_window [class="Bitwarden"] floating enable, resize set $fw $fh, move position center
+for_window [app_id="com.toxdes.promptr"] floating enable, resize set $fw $fh, move position center
+for_window [app_id="thunderbird"] floating enable, resize set $fw $fh, move position center
+# for_window [app_id="chrome-ofkiaegglmgkpaelcapkcfipbglfokkm-Profile_1"] floating enable, resize set $fw $fh, move position center
+for_window [app_id="org.qbittorrent.qBittorrent"] floating enable, resize set $fw $fh, move position center
