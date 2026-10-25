@@ -1,27 +1,27 @@
 {
   "layer": "bottom",
-    "position": "top",
-    "height": 18,
-    "margin-top": 0,
-    "margin-left":  0,
-    "margin-right": 0,
-    "margin-bottom": 0,
-    "modules-left": [
-        "sway/workspaces",
-        "custom/space",
-        "sway/mode",
-        "custom/space",
-        "sway/window",
+  "position": "top",
+  "height": 20,
+  "margin-top": 0,
+  "margin-left":  0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "modules-left": [
+    "sway/workspaces",
+    "custom/space",
+    "sway/mode",
+    "custom/space",
+    "sway/window",
     ],
     "modules-right": [
       "custom/ip",
-    "cpu",
-    "memory",
-    "pulseaudio",
-    "backlight",
-    "battery",
-    "tray",
-    "clock",
+      "cpu",
+      "memory",
+      "pulseaudio",
+      "backlight",
+      "battery",
+      "tray",
+      "clock",
     ],
     "custom/space": {
       "format": "  ",
@@ -33,12 +33,12 @@
       "icon-size": 14,
     },
     "sway/workspaces": {
-        "disable-scroll":true,
-        "format": "󰣇 [{name}]",
+      "disable-scroll":true,
+      "format": "󰣇 [{name}]",
     },
     "sway/mode": {
-        "format": "[{}]",
-        "tooltip": false,
+      "format": "[{}]",
+      "tooltip": false,
     },
     "custom/ip": {
       "exec": "ip route get 1 | awk '{print $7; exit}'",
@@ -56,9 +56,9 @@
       "on-click": "alacritty -e btop"
     },
     "memory": {
-      "format": "󰍛 MEM {used}G",
+      "format": "󰍛 MEM {used:.2f}G",
       "tooltip": true,
-      "tooltip-format": "󰍛 USING: {used}GB\n  FREE: {avail}GB",
+      "tooltip-format": "󰍛 USING: {used:.2f}GB\n  FREE: {avail:.2f}GB",
       "interval": 5,
       "on-click": "alacritty -e btop"
     },
@@ -67,8 +67,8 @@
       "format": "{icon} TEMP {temperatureC}°C",
       "format-icons": [
         "󱃃",
-      "󰔏",
-      "󱃂"
+        "󰔏",
+        "󱃂"
       ],
     },
     "battery": {
@@ -83,16 +83,16 @@
       "format-alt": "{icon} {time}",
       "format-icons": [
         "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
       ]
     },
     "pulseaudio": {
@@ -109,8 +109,8 @@
         "car": "󰄋",
         "default": [
           "󰕿",
-        "󰖀",
-        "󰕾"
+          "󰖀",
+          "󰕾"
         ]
       },
       "on-click": "pavucontrol",
@@ -122,8 +122,8 @@
       "format": "{icon} BLT {percent}%",
       "format-icons": [
         "󰃞",
-      "󰃟",
-      "󰃠"
+        "󰃟",
+        "󰃠"
       ],
       "on-scroll-up": "brightnessctl set +10%",
       "on-scroll-down": "brightnessctl set 10%-"

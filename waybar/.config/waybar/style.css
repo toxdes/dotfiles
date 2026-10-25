@@ -1,5 +1,15 @@
-@import "/home/bets/hyprwhspr/config/waybar/hyprwhspr-style.css";
-/*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one.*/
+@import "themes/everforest_dark_hard.css";
+/* Keep one palette active; uncomment the replacement and comment this import.
+@import "themes/everforest_dark_medium.css";
+@import "themes/everforest_dark_soft.css";
+@import "themes/everforest_light_hard.css";
+@import "themes/everforest_light_medium.css";
+@import "themes/everforest_light_soft.css";
+@import "themes/solarized_dark.css";
+@import "themes/solarized_light.css";
+*/
+
+/*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The active palette is imported above.*/
 
 
 
@@ -52,6 +62,7 @@
 
 
 /* Palenight Color Palette */
+/*
 @define-color background #292D3E;
 @define-color background-light #3c3836;
 @define-color foreground #eeffff;
@@ -64,6 +75,7 @@
 @define-color cyan #89ddff;
 @define-color white #eeffff;
 @define-color orange #f78c6c;
+*/
 
 /* Gruvbox Dark Colors */
 /*
@@ -81,6 +93,21 @@
  @define-color orange #d65d0e;
 */
 
+/* Solarized Dark */
+/*
+@define-color background #002b36;
+@define-color background-light #073642;
+@define-color foreground #839496;
+@define-color black #586e75;
+@define-color red #dc322f;
+@define-color green #859900;
+@define-color yellow #b58900;
+@define-color blue #268bd2;
+@define-color magenta #d33682;
+@define-color cyan #2aa198;
+@define-color white #eee8d5;
+@define-color orange #cb4b16;
+*/
 
 
 /* Module-specific colors */
@@ -122,8 +149,8 @@
 * {
     /* Base styling for all modules */
     border: none;
-    font-family: "IosBerkMono SemiBold";
-    font-weight: 400;
+    font-family: "Berkeley Mono NF";
+    font-weight: 700;
     font-size: 11px;
     min-height: 0;
 }

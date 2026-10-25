@@ -1,0 +1,14 @@
+/* Everforest Light Hard */
+/* Palette source: sainnhe/everforest, upstream palette.md; commit 85a86eb. */
+@define-color background #fffbef;
+@define-color background-light #f8f5e4;
+@define-color foreground #5c6a72;
+@define-color black #5c6a72;
+@define-color red #f85552;
+@define-color green #8da101;
+@define-color yellow #dfa000;
+@define-color blue #3a94c5;
+@define-color magenta #df69ba;
+@define-color cyan #35a77c;
+@define-color white #e8e5d5;
+@define-color orange #f57d26;
