@@ -1,24 +1,32 @@
 [global]
-    font = "IosBerkMono 13"
+    font = "Berkeley Mono 14"
+    enable_posix_regex = true
 
     # Padding
     padding = 12
     horizontal_padding = 20
     text_icon_padding = 12
-    gap = 6
 
     # Icons
     enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Light, candy-icons"
+    default_icon = notification-active
     icon_position = left
     min_icon_size = 32
     max_icon_size = 64
 
     # Layout
+    width = 360
+    height = (0, 300)
+    notification_limit = 5
     origin = top-right
-    offset = (0, 26)
-    geometry = "350x5"
+    follow = mouse
+    offset = (12, 30)
     separator_color = frame
-    frame_width = 2
+    frame_width = 3
+    gap_size = 0
+    separator_height = 2
+    corner_radius = 4
     sort = yes
     stack_duplicates = true
     hide_duplicate_count = false
@@ -30,30 +38,168 @@
     # Misc
     browser = /usr/bin/xdg-open
     markup = full
-    format = "<b>%s</b><span font_desc='IosBerkMono 10'>\n\n%b</span>"
+    format = "<b>%s</b>\n<span font_desc='Berkeley Mono 12'>%b</span>"
 
-[shortcuts]
-    context = ctrl+space
-    close_all = ctrl+grave
-    close = ctrl+period
-
+# Color scheme: everforest_dark_hard (active)
+# To switch, comment out the active three sections and uncomment one complete
+# alternative palette below. Keep exactly one palette active.
 [urgency_low]
-    background = "#292D3E"
-    foreground = "#eeffff"
-    highlight = "#c792ef"
-    frame_color = "#676E95"
+    background = "#272e33"
+    foreground = "#d3c6aa"
+    highlight = "#a7c080"
+    frame_color = "#414b50"
     timeout = 6
 
 [urgency_normal]
-    background = "#292D3E"
-    foreground = "#eeffff"
-    highlight = "#c792ef"
-    frame_color = "#82aaff"
+    background = "#272e33"
+    foreground = "#d3c6aa"
+    highlight = "#7fbbb3"
+    frame_color = "#7fbbb3"
     timeout = 8
 
 [urgency_critical]
-    background = "#292D3E"
-    foreground = "#eeffff"
-    highlight = "#f07178"
-    frame_color = "#f07178"
+    background = "#272e33"
+    foreground = "#d3c6aa"
+    highlight = "#e67e80"
+    frame_color = "#e67e80"
     timeout = 0
+
+# Color scheme: everforest_dark_medium
+# [urgency_low]
+#     background = "#2d353b"
+#     foreground = "#d3c6aa"
+#     highlight = "#a7c080"
+#     frame_color = "#475258"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#2d353b"
+#     foreground = "#d3c6aa"
+#     highlight = "#7fbbb3"
+#     frame_color = "#7fbbb3"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#2d353b"
+#     foreground = "#d3c6aa"
+#     highlight = "#e67e80"
+#     frame_color = "#e67e80"
+#     timeout = 0
+
+# Color scheme: everforest_dark_soft
+# [urgency_low]
+#     background = "#333c43"
+#     foreground = "#d3c6aa"
+#     highlight = "#a7c080"
+#     frame_color = "#4d5960"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#333c43"
+#     foreground = "#d3c6aa"
+#     highlight = "#7fbbb3"
+#     frame_color = "#7fbbb3"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#333c43"
+#     foreground = "#d3c6aa"
+#     highlight = "#e67e80"
+#     frame_color = "#e67e80"
+#     timeout = 0
+
+# Color scheme: everforest_light_hard
+# [urgency_low]
+#     background = "#fffbef"
+#     foreground = "#5c6a72"
+#     highlight = "#8da101"
+#     frame_color = "#5c6a72"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#fffbef"
+#     foreground = "#5c6a72"
+#     highlight = "#3a94c5"
+#     frame_color = "#3a94c5"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#fffbef"
+#     foreground = "#5c6a72"
+#     highlight = "#f85552"
+#     frame_color = "#f85552"
+#     timeout = 0
+
+# Color scheme: everforest_light_medium
+# [urgency_low]
+#     background = "#fdf6e3"
+#     foreground = "#5c6a72"
+#     highlight = "#8da101"
+#     frame_color = "#5c6a72"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#fdf6e3"
+#     foreground = "#5c6a72"
+#     highlight = "#3a94c5"
+#     frame_color = "#3a94c5"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#fdf6e3"
+#     foreground = "#5c6a72"
+#     highlight = "#f85552"
+#     frame_color = "#f85552"
+#     timeout = 0
+
+# Color scheme: everforest_light_soft
+# [urgency_low]
+#     background = "#f3ead3"
+#     foreground = "#5c6a72"
+#     highlight = "#8da101"
+#     frame_color = "#5c6a72"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#f3ead3"
+#     foreground = "#5c6a72"
+#     highlight = "#3a94c5"
+#     frame_color = "#3a94c5"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#f3ead3"
+#     foreground = "#5c6a72"
+#     highlight = "#f85552"
+#     frame_color = "#f85552"
+#     timeout = 0
+
+# Color scheme: solarized_dark
+# [urgency_low]
+#     background = "#002b36"
+#     foreground = "#839496"
+#     highlight = "#2aa198"
+#     frame_color = "#586e75"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#002b36"
+#     foreground = "#839496"
+#     highlight = "#268bd2"
+#     frame_color = "#268bd2"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#002b36"
+#     foreground = "#839496"
+#     highlight = "#dc322f"
+#     frame_color = "#dc322f"
+#     timeout = 0
+
+# Color scheme: solarized_light
+# [urgency_low]
+#     background = "#fdf6e3"
+#     foreground = "#657b83"
+#     highlight = "#2aa198"
+#     frame_color = "#93a1a1"
+#     timeout = 6
+# [urgency_normal]
+#     background = "#fdf6e3"
+#     foreground = "#657b83"
+#     highlight = "#268bd2"
+#     frame_color = "#268bd2"
+#     timeout = 8
+# [urgency_critical]
+#     background = "#fdf6e3"
+#     foreground = "#657b83"
+#     highlight = "#dc322f"
+#     frame_color = "#dc322f"
+#     timeout = 0

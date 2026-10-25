@@ -5,11 +5,16 @@ alias ga="git add"
 alias gc="git commit --verbose"
 alias gca="git commit --amend --verbose"
 alias gm="git merge"
+alias gmf="git merge --ff-only"
 alias gck="git checkout"
 alias gf="git fetch origin"
 alias gp="git push origin"
-alias gr="git rebase -i"
 alias gb="git branch"
+alias gsw="git switch"
+
+gr() {
+  git "$@" | nvim -R
+}
 
 # use neovim as pager for git diff
 gd() {
@@ -28,6 +33,7 @@ alias py="python3"
 alias ls="eza"
 alias oc="opencode"
 alias occ="opencode --continue"
+alias cx="codex"
 
 
 # scripts
@@ -59,7 +65,7 @@ alias t="tmux"
 
 # tailnet
 tnssh() {
-  ssh $1.tn.toxdes.com
+  ssh $1.tnvm.top
 }
 
 # save png from clipboard
