@@ -31,3 +31,5 @@ vim.keymap.set('n', '<C-c>', ':nohl<CR>', { silent = true })
 -- delete char without copying
 vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true})
 
+-- kj to esc 
+vim.keymap.set('i', 'kj', '<Esc>', { desc = "Exit insert mode", nowait = true })

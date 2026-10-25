@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>cc', builtin.colorscheme, { desc = 'Telescope color
 vim.keymap.set('n', '<leader>=','magg=G`a', { noremap = true, silent = true })
 
 -- netrw keybindings
-vim.keymap.set('n', '<leader>t', ":Ex<CR>", {noremap = true, silent = true })
+vim.keymap.set('n', '<leader>t', ":NvimTreeToggle<CR>", {noremap = true, silent = true })
 
 -- config
 vim.keymap.set('n', '<leader>cr', ":w<CR>:source % <CR>", {noremap = true, silent = true })
@@ -34,3 +34,47 @@ vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true})
  
 -- kj to esc 
 vim.keymap.set('i', 'kj', '<Esc>', { desc = "Exit insert mode", nowait = true })
+
+-- copy/delete entire buffer
+local function copy_buffer()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  vim.fn.setreg("+", table.concat(lines, "\n") .. "\n")
+end
+
+local function clear_buffer()
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, {})
+end
+
+vim.keymap.set("n", "<leader>c", copy_buffer)
+vim.keymap.set("n", "<leader>-", clear_buffer)
+
+-- copy selection
+local function copy_location(visual)
+  local file = vim.api.nvim_buf_get_name(0)
+  local root = vim.fs.root(0, { ".git" }) or vim.fn.getcwd()
+  file = vim.fs.relpath(root, file) or file
+
+  local first, last
+
+  if visual then
+    first = vim.fn.line("v")
+    last = vim.fn.line(".")
+    first, last = math.min(first, last), math.max(first, last)
+  else
+    first = vim.fn.line(".")
+  end
+
+  local location = visual and
+    ("%s:%d:%d"):format(file, first, last) or
+    ("%s:%d"):format(file, first)
+
+  vim.fn.setreg("+", location)
+end
+
+vim.keymap.set("n", "<leader>.", function()
+  copy_location(false)
+end)
+
+vim.keymap.set("v", "<leader>.", function()
+  copy_location(true)
+end)

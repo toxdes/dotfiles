@@ -1,23 +1,36 @@
+-- toggle diagnostics
+-- style
 local diagnostic_virtual_text = {
   spacing = 2,
   source = "if_many",
   prefix = "■",
   severity = { min = vim.diagnostic.severity.HINT },
 }
-
 vim.diagnostic.config({
   virtual_text = diagnostic_virtual_text,
   severity_sort = true,
 })
 
+-- Toggle inline diagnostics (<leader>lt)
 local virtual_text_enabled = true
-vim.keymap.set('n', '<leader>lt', function()
+
+vim.keymap.set("n", "<leader>lt", function()
   virtual_text_enabled = not virtual_text_enabled
   vim.diagnostic.config({
     virtual_text = virtual_text_enabled and diagnostic_virtual_text or false,
   })
   print("Inline diagnostics: " .. (virtual_text_enabled and "VISIBLE" or "HIDDEN"))
-end, { desc = "Toggle inline virtual text only" })
+end, { desc = "Toggle inline virtual text" })
+
+-- toggle all diagnostics 
+local diagnostics_enabled = true
+
+vim.keymap.set("n", "<leader>lT", function()
+  diagnostics_enabled = not diagnostics_enabled
+  vim.diagnostic.enable(diagnostics_enabled)
+  print("Diagnostics: " .. (diagnostics_enabled and "ENABLED" or "DISABLED"))
+end, { desc = "Toggle all diagnostics" })
+
 
 -- lsp config for built-in vim.lsp.config
 local capabilities = vim.tbl_deep_extend(
@@ -57,6 +70,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, "Format", vim.lsp.buf.format, {})
 end
 
+-- golang
 vim.lsp.config.gopls = {
   cmd = { "gopls" },
   filetypes = { "go" },
@@ -65,6 +79,7 @@ vim.lsp.config.gopls = {
 }
 vim.lsp.enable("gopls")
 
+-- rust
 vim.lsp.config.rust_analyzer = {
   cmd = { "rustup", "run", "stable", "rust-analyzer" },
   filetypes = { "rust" },
@@ -72,13 +87,16 @@ vim.lsp.config.rust_analyzer = {
   on_attach = on_attach,
   settings = {
     ["rust-analyzer"] = {
-      checkOnSave = { command = "clippy" },
+      checkOnSave = true,
+      check = { command = "clippy" },
       inlayHints = { enable = true },
     },
   },
 }
 vim.lsp.enable("rust_analyzer")
 
+
+-- dart
 vim.lsp.config.dartls = {
   cmd = { "dart", "language-server", "--protocol=lsp" },
   filetypes = { "dart" },
@@ -93,6 +111,7 @@ vim.lsp.config.dartls = {
 }
 vim.lsp.enable("dartls")
 
+-- typescript
 vim.lsp.config.ts_ls = {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
@@ -113,14 +132,8 @@ vim.lsp.config.ts_ls = {
 }
 vim.lsp.enable("ts_ls")
 
-vim.lsp.config.pyright = {
-  cmd = { "pyright-langserver", "--stdio" },
-  filetypes = { "python" },
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-vim.lsp.enable("pyright")
 
+-- cpp
 vim.lsp.config.clangd = {
   cmd = { "clangd", "--background-index" },
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
@@ -128,4 +141,31 @@ vim.lsp.config.clangd = {
   on_attach = on_attach,
 }
 vim.lsp.enable("clangd")
+
+-- python3
+vim.lsp.config.basedpyright = {
+  cmd = { "basedpyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "strict" 
+      },
+      disableOrganizeImports = true,
+    },
+  },
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+vim.lsp.enable("basedpyright")
+
+vim.lsp.config.ruff = {
+  cmd = { "ruff", "server" },
+  filetypes = { "python" },
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+vim.lsp.enable("ruff")
+
+
 
