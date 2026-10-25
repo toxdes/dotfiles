@@ -1,20 +1,46 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/solarized_dark.toml"
+    # Keep one theme active; uncomment the replacement and comment this import.
+    "~/.config/alacritty/themes/everforest_dark_hard.toml",
+    # Everforest alternatives:
+    # "~/.config/alacritty/themes/everforest_dark_medium.toml",
+    # "~/.config/alacritty/themes/everforest_dark_soft.toml",
+    # "~/.config/alacritty/themes/everforest_light_hard.toml",
+    # "~/.config/alacritty/themes/everforest_light_medium.toml",
+    # "~/.config/alacritty/themes/everforest_light_soft.toml",
+    # Solarized alternatives:
+    # "~/.config/alacritty/themes/solarized_dark.toml",
+    # "~/.config/alacritty/themes/solarized_light.toml",
 ]
 
 [window]
 opacity = 1
-padding = { x = 2, y = 2 }
+padding = { x = 1, y = 1 }
+dynamic_padding = true
 decorations = "Full"
 dimensions = { columns = 80, lines = 24 }
 
+
 [font]
-normal.family = "IosBerkMono"
-bold.family = "IosBerkMono"
-bold.style = "Medium"
-size = 12.25
+# size = 12.25
+size = 12
 offset.y = 0
+
+[font.normal]
+family = "Berkeley Mono NF"
+style = "Regular"
+
+[font.bold]
+family = "Berkeley Mono NF"
+style = "Bold"
+
+[font.italic]
+family = "Berkeley Mono NF"
+style = "Oblique"
+
+[font.bold_italic]
+family = "Berkeley Mono NF"
+style = "Bold Oblique"
 
 [selection]
 save_to_clipboard = false
@@ -30,4 +56,3 @@ bindings = [
 # [terminal.shell]
 # program = "/usr/bin/tmux"
 # args = ["new-session", "-A", "-D"]
-
