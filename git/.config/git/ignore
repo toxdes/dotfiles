@@ -1,0 +1,8 @@
+**/.claude/settings.local.json
+# emacs backup files
+*~
+# emacs auto-save files
+\#*\#
+
+# emacs lock files
+.\#*
